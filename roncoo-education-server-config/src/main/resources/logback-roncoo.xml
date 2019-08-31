@@ -2,9 +2,9 @@
 <configuration>
 
 	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
-	
+
 	<springProperty name="springApplicationName" source="spring.application.name" defaultValue="roncoo-education"/>
-	<springProperty name="FILE_PATH" source="info.roncoo.logging.path" defaultValue="/home/roncoo/logs"/>
+	<springProperty name="FILE_PATH" source="info.roncoo.logging.path" defaultValue="/home/roncoo-edu-op/logs"/>
 
     <property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -|   %msg%n"/>
 
@@ -22,7 +22,7 @@
 			<appender-ref ref="CONSOLE" />
 		</root>
 	</springProfile>
-	
+
 	<!-- 测试环境 -->
     <springProfile name="test">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -41,7 +41,7 @@
                 <pattern>${PATTERN}</pattern>
             </layout>
         </appender>
-     
+
         <root level="warn">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="TEST-FILE" />
